@@ -1,12 +1,31 @@
 'use client'
 
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 export default function Home() {
   const [message, setMessage] = useState('hello');
 
   const handleChange = () => {
     setMessage('new value');
+  }
+
+  const showAlert = async () => {
+    const button = await Swal.fire({
+      title: 'บันทึกข้อมูล',
+      text: 'ยืนยันการบันทึก',
+      icon: 'question', // success, info, error, warning, question
+      showConfirmButton: true,
+      showCancelButton: true
+    })
+
+    if (button.isConfirmed) {
+      Swal.fire({
+        title: 'tile',
+        text: 'okkkk',
+        icon: 'success'
+      })
+    }
   }
 
   return (
@@ -21,6 +40,9 @@ export default function Home() {
         className="bg-blue-600 px-4 py-2 rounded-md"
         onClick={handleChange}>
         click here
+      </button>
+      <button onClick={showAlert} className="btn">
+        Alert
       </button>
     </div>
   );
