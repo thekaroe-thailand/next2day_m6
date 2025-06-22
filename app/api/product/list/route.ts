@@ -13,6 +13,6 @@ export async function GET() {
         return NextResponse.json(products);
     } catch (err) {
         console.log(err);
-        return NextResponse.json({ error: err })
+        return NextResponse.json({ error: (err as Error).message })
     }
 }
