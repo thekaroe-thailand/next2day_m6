@@ -16,3 +16,20 @@ body {
 .menu a {
   @apply px-2 font-bold hover:text-blue-800;
 }
+
+input {
+  @apply border-1 border-gray-400 p-2 rounded-lg shadow-lg
+}
+
+table {
+  @apply w-full;
+}
+
+table thead tr th {
+  @apply bg-blue-400 p-2 text-start
+}
+
+table tbody tr td {
+  @apply p-2 border-1 border-b-gray-400 border-t-0 border-l-0
+    border-r-0 bg-blue-100;
+}
